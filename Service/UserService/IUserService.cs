@@ -1,7 +1,7 @@
-﻿using ProductWebApi.Dtos;
-using ProductWebApi.Requests;
+﻿using LibraryWebApi.Dtos;
+using LibraryWebApi.Requests;
 
-namespace ProductWebApi.Service.UserService;
+namespace LibraryWebApi.Service.UserService;
 
 public interface IUserService // Интерфейс сервиса для работы с пользователями
 {

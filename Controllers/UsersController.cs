@@ -1,10 +1,10 @@
-﻿using Microsoft.AspNetCore.Mvc;
-using ProductWebApi.Dtos;
-using ProductWebApi.Requests;
-using ProductWebApi.Responses;
-using ProductWebApi.Service.UserService;
+﻿using LibraryWebApi.Dtos;
+using LibraryWebApi.Requests;
+using LibraryWebApi.Responses;
+using LibraryWebApi.Service.UserService;
+using Microsoft.AspNetCore.Mvc;
 
-namespace ProductWebApi.Controllers;
+namespace LibraryWebApi.Controllers;
 
 [ApiController]
 [Route("api/users")]

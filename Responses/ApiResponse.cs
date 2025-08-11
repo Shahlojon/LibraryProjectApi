@@ -1,4 +1,4 @@
-﻿namespace ProductWebApi.Responses;
+﻿namespace LibraryWebApi.Responses;
 
 public class ApiResponse<T>  // Обобщенный класс
 {

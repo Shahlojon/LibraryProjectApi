@@ -1,8 +1,8 @@
-﻿using ProductWebApi.Dtos;
-using ProductWebApi.Models;
-using ProductWebApi.Requests;
+﻿using LibraryWebApi.Dtos;
+using LibraryWebApi.Models;
+using LibraryWebApi.Requests;
 
-namespace ProductWebApi.Service.UserService;
+namespace LibraryWebApi.Service.UserService;
 
 public class UserService : IUserService
 {

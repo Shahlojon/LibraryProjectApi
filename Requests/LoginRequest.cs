@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace ProductWebApi.Requests;
+namespace LibraryWebApi.Requests;
 //// Получение данных от клиента к серверу. Входные данные
 public class LoginRequest // Запрос на вход
 {

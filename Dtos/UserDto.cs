@@ -1,4 +1,4 @@
-﻿namespace ProductWebApi.Dtos;
+﻿namespace LibraryWebApi.Dtos;
 
 // Path: Dtos/UserDto.cs - данные которые передаются в ответе
 public class UserDto 

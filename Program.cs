@@ -1,28 +1,40 @@
-using ProductWebApi.Service.ProductService;
+using System.Reflection;
+using Mapster;
+using MapsterMapper;
+using LibraryWebApi.Mapper;
+using LibraryWebApi.Service.BookService;
 
-var builder = WebApplication.CreateBuilder(args); // Создаем новое приложение
+var builder = WebApplication.CreateBuilder(args); 
 
 // Add services to the container.
 
-builder.Services.AddControllers(); // Добавляем контроллеры
+builder.Services.AddControllers(); 
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
-builder.Services.AddEndpointsApiExplorer(); // Добавляем генерацию документации
-builder.Services.AddSwaggerGen();  // Добавляем генерацию документации
-builder.Services.AddSingleton<IProductService, ProductService>(); // Добавляем сервис для работы с продуктами в контейнер зависимостей. Добавляем зависимость ProductService с интерфейсом IProductService
-var app = builder.Build(); // Строим приложение
+builder.Services.AddEndpointsApiExplorer(); 
+builder.Services.AddSwaggerGen();  
+// Program.cs
+builder.Services.AddMapster(); // РїРѕРґРєР»СЋС‡Р°РµС‚ ServiceMapper Рё IMapper
+
+// РђРІС‚РѕРјР°С‚РёС‡РµСЃРєРё СЃРєР°РЅРёСЂСѓРµС‚ РІСЃРµ РєР»Р°СЃСЃС‹ IRegister
+TypeAdapterConfig.GlobalSettings.Scan(Assembly.GetExecutingAssembly());
+
+
+builder.Services.AddSingleton<IBookService, BookService>(); 
+
+var app = builder.Build(); // 
 
 // Configure the HTTP request pipeline.
-if (app.Environment.IsDevelopment())  // Если приложение в режиме разработки
+if (app.Environment.IsDevelopment())  // 
 {
-    app.UseSwagger(); // Используем Swagger
-    app.UseSwaggerUI(); // Используем Swagger UI
+    app.UseSwagger(); 
+    app.UseSwaggerUI(); 
 }
 
 
-app.UseHttpsRedirection(); // Используем перенаправление на https
+app.UseHttpsRedirection(); 
 
-app.UseAuthorization(); // Используем авторизацию
+app.UseAuthorization(); 
 
-app.MapControllers();  // Используем контроллеры
+app.MapControllers();  
  
-app.Run(); // Запускаем приложение
+app.Run(); 
